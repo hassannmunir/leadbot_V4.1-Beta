@@ -30,8 +30,8 @@
   "website_discovery_max_results": 10,
   "website_discovery_search_url": "https://html.duckduckgo.com/html/",
   "quota_state_file": "quota_state.json",
-  "google_sheet_id": "1vQUBsn4ZPnWXbaMz76oERv8LGCzw4TFGqJOTUc4elGY",
-  "google_service_account_file": "asads.json",
+  "google_sheet_id": "",
+  "google_service_account_file": "hassan.json",
   "sheet_max_rows": 500,
   "csv_out": "leads",
   "overpass_endpoints": [
@@ -43,12 +43,7 @@
     {
       "country": "United States",
       "region": "Austin",
-      "niche": "clinic"
-    },
-    {
-      "country": "United States",
-      "region": "Austin, Texas",
-      "niche": "restaurant"
+      "niche": "clothing_store"
     }
   ],
   "_tuning_guide": {

@@ -108,7 +108,7 @@ The console's country and region dropdowns read `leadbot/discovery/regions_map.j
 - `safety/` — request pacing, retries, robots.txt, and quota tracking
 - `ui/` — local HTTP server, UI state, and HTML templates
 - `main.py` — backward-compatible CLI entry point
-- `ui.py` — backward-compatible web UI entry point
+- `ui.py` — backward-compatible web UI entry point.
 
 The command-line and web entry points are intentionally thin. Feature code
 lives in focused modules so discovery, enrichment, persistence, progress
