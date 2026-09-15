@@ -31,7 +31,7 @@
   "website_discovery_search_url": "https://html.duckduckgo.com/html/",
   "quota_state_file": "quota_state.json",
   "google_sheet_id": "",
-  "google_service_account_file": "hassan.json",
+  "google_service_account_file": "asads.json",
   "sheet_max_rows": 500,
   "csv_out": "leads",
   "overpass_endpoints": [
