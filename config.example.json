@@ -1,0 +1,66 @@
+{
+  "_comment": "LeadBot v2 \u2014 Optimized config. All performance/safety knobs in one place.",
+  "delay_seconds": 2,
+  "verification_workers": 7,
+  "storage_batch_size": 50,
+  "max_tile_area_deg2": 0.35,
+  "requests_per_minute": 130,
+  "rate_limit_safety_ratio": 0.85,
+  "robots_cache_ttl_seconds": 86400,
+  "website_cache_file": "website_cache.sqlite3",
+  "website_cache_ttl_seconds": 604800,
+  "minimum_quality_score": 0,
+  "phone_region": "US",
+  "v4_scoring": {
+    "contactability_weights": {
+      "phone": 40,
+      "email": 40,
+      "social": 20
+    },
+    "sales_priority_weights": {
+      "lead_quality": 0.5,
+      "contactability": 0.3,
+      "ai_fit": 0.2
+    },
+    "contactable_definition": "phone OR email OR social",
+    "target_contactability_percent": 70
+  },
+  "website_discovery_enabled": true,
+  "website_discovery_min_confidence": 0.66,
+  "website_discovery_max_results": 10,
+  "website_discovery_search_url": "https://html.duckduckgo.com/html/",
+  "quota_state_file": "quota_state.json",
+  "google_sheet_id": "1vQUBsn4ZPnWXbaMz76oERv8LGCzw4TFGqJOTUc4elGY",
+  "google_service_account_file": "asads.json",
+  "sheet_max_rows": 500,
+  "csv_out": "leads",
+  "overpass_endpoints": [
+    "https://overpass-api.de/api/interpreter",
+    "https://overpass.kumi.systems/api/interpreter",
+    "https://overpass.private.coffee/api/interpreter"
+  ],
+  "queries": [
+    {
+      "country": "United States",
+      "region": "Austin",
+      "niche": "clinic"
+    },
+    {
+      "country": "United States",
+      "region": "Austin, Texas",
+      "niche": "restaurant"
+    }
+  ],
+  "_tuning_guide": {
+    "verification_workers": "6 = default sweet spot. 8-10 = faster but more aggressive. Max 12 (hard cap). NEVER increase OSM workers.",
+    "delay_seconds": "2 = minimum safe. 3 = conservative. 1 = risky for shared sites.",
+    "requests_per_minute": "120 = safe for most sites. 60 = very conservative. Never >200.",
+    "rate_limit_safety_ratio": "0.85 = use 85% of RPM budget. Lower = more headroom.",
+    "max_tile_area_deg2": "0.35 = city-sized tiles. 0.5 = larger. Smaller = more tiles but safer Overpass queries.",
+    "website_cache_ttl_seconds": "604800 = 7 days. Same website won't be re-fetched for 7 days = huge speed boost on repeat runs.",
+    "storage_batch_size": "20 = save every 20 leads. Lower = safer on crash. Higher = fewer Sheets API calls."
+  },
+  "public_contact_search_enabled": true,
+  "public_contact_search_min_confidence": 0.72,
+  "public_contact_search_max_results": 12
+}
